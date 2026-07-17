@@ -1,28 +1,24 @@
 #!/bin/bash
 
 case "$1" in
-  build)
-    docker compose build
+  install)
+    bundle install
     ;;
   serve)
-    docker compose up
+    bundle exec jekyll serve --host 0.0.0.0 --livereload
     ;;
-  stop)
-    docker compose down
+  build)
+    bundle exec jekyll build
     ;;
-  shell)
-    docker compose run --rm jekyll bash
-    ;;
-  install)
-    docker compose run --rm jekyll bundle install
+  clean)
+    bundle exec jekyll clean
     ;;
   *)
-    echo "Usage: ./run.sh {build|serve|stop|shell|install}"
+    echo "Usage: ./run.sh {install|serve|build|clean}"
     echo ""
-    echo "  build   - Build Docker image"
-    echo "  serve   - Start Jekyll server (http://localhost:4000)"
-    echo "  stop    - Stop containers"
-    echo "  shell   - Open bash inside container"
-    echo "  install - Run bundle install"
+    echo "  install - Cài dependencies (chạy lần đầu)"
+    echo "  serve   - Chạy server tại http://localhost:4000"
+    echo "  build   - Build static site"
+    echo "  clean   - Xóa file generated"
     ;;
 esac
