@@ -2,15 +2,15 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Jekyll Server",
+      "label": "Jekyll Serve",
       "type": "shell",
-      "command": "./tools/run.sh",
+      "command": "bundle exec jekyll serve --livereload --host 0.0.0.0 --port 4000",
       "group": {
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": [],
-      "detail": "Runs the Jekyll server with live reload."
+      "isBackground": true,
+      "problemMatcher": []
     },
     {
       "label": "Build Jekyll Site",
