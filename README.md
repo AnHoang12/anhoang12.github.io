@@ -37,15 +37,22 @@ This repository is automatically updated with new releases from the theme reposi
 
 This work is published under [MIT][mit] License.
 
-## Chạy local (sau khi clone)
+## Run local server
 
 ```bash
 chmod +x run.sh
-./run.sh install   # Cài dependencies (chỉ chạy 1 lần)
-./run.sh serve     # Chạy server tại http://localhost:4000
+./run.sh install   
+./run.sh serve     # http://localhost:4000
 ```
+
+'''bash
+bundle exec jekyll serve --livereload --host 0.0.0.0 --port 4000   
+'''
 
 [gem]: https://rubygems.org/gems/jekyll-theme-chirpy
 [chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
 [CD]: https://en.wikipedia.org/wiki/Continuous_deployment
 [mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+
+
+

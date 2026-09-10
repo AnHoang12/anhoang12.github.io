@@ -3,6 +3,9 @@
   "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
   "onCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
   "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "remoteEnv": {
+    "DISABLE_RBENV": "1"
+  },
   "forwardPorts": [4000, 35729],
   "customizations": {
     "vscode": {
